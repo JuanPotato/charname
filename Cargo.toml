@@ -1,0 +1,10 @@
+[package]
+name = "charname"
+version = "0.1.0"
+authors = ["Hasan Ibraheem <hasantiny@gmail.com>"]
+
+[dependencies]
+phf = "0.7.22"
+
+[build-dependencies]
+phf_codegen = "0.7.22"

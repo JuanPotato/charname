@@ -2,9 +2,12 @@
 name = "charname"
 version = "0.1.0"
 authors = ["Hasan Ibraheem <hasantiny@gmail.com>"]
+license = "MPL-2.0"
+description = "Incredibly simple library that just gives you the Unicode name for a character."
 
 [dependencies]
 phf = "0.7.22"
+charname = { path = "." }
 
 [build-dependencies]
 phf_codegen = "0.7.22"

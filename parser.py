@@ -13,13 +13,13 @@ def get_data(line):
     if name == '<control>' and data[10] != '':
         name = data[10]
 
-    return num, name
+    return (num, name)
 
 
 def main(filename, dstfilename):
     with open(filename) as fin, open(dstfilename, 'w') as fout:
         for line in fin:
-            f.write(f'{num:X};{name}\n' for num, name in get_data(line.strip()))
+            fout.write(f'{num:X};{name}\n' for num, name in get_data(line.strip()))
 
 
 if __name__ == '__main__':

@@ -19,7 +19,8 @@ def get_data(line):
 def main(filename, dstfilename):
     with open(filename) as fin, open(dstfilename, 'w') as fout:
         for line in fin:
-            fout.write(f'{num:X};{name}\n' for num, name in get_data(line.strip()))
+            num, name = get_data(line.strip())
+            fout.write(f'{num:X};{name}\n')
 
 
 if __name__ == '__main__':

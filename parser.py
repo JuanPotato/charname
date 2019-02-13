@@ -17,11 +17,11 @@ def get_data(line):
 
 
 def main(filename, dstfilename):
-    with open(filename, 'r') as f:
-        data = [get_data(line.strip()) for line in f]
-    
-    with open(dstfilename, 'w') as f:
-        f.write('\n'.join(f'{num:X};{name}' for (num, name) in data))
+    with open(filename, 'r') as src:
+        data = (get_data(line.strip()) for line in src)
+
+        with open(dstfilename, 'w') as dst:
+            dst.write('\n'.join(f'{num:X};{name}' for (num, name) in data))
 
 
 if __name__ == '__main__':

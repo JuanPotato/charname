@@ -1,13 +1,13 @@
 [package]
 name = "charname"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Hasan Ibraheem <hasantiny@gmail.com>"]
 license = "MPL-2.0"
 description = "Incredibly simple library that just gives you the Unicode name for a character."
 repository = "https://github.com/JuanPotato/charname"
 
 [dependencies]
-phf = "0.7.22"
+phf = "0.7.24"
 
 [build-dependencies]
-phf_codegen = "0.7.22"
+phf_codegen = "0.7.24"

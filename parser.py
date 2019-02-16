@@ -27,9 +27,12 @@ if __name__ == '__main__':
     src = 'UnicodeData.txt'
     dst = 'UnicodeDataFixed.txt'
 
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 1:
+        # ya good
+        pass
+    elif len(sys.argv) == 2:
         src = sys.argv[1]
-    if len(sys.argv) == 3:
+    elif len(sys.argv) == 3:
         src = sys.argv[1]
         dst = sys.argv[2]
     else:

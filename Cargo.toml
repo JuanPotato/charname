@@ -1,6 +1,6 @@
 [package]
 name = "charname"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Hasan Ibraheem <hasantiny@gmail.com>"]
 license = "MPL-2.0"
 description = "Incredibly simple library that just gives you the Unicode name for a character."

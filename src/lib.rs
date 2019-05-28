@@ -7,7 +7,11 @@ extern crate phf;
 include!(concat!(env!("OUT_DIR"), "/codegen.rs"));
 
 pub fn get_name(c: u32) -> &'static str {
-    match UNICODE.get(&c) {
+    get_name_checked(c).unwrap_or("UNKNOWN CHARACTER")
+}
+
+pub fn get_name_checked(c: u32) -> Option<&'static str> {
+    Ok(match UNICODE.get(&c) {
         Some(s) => s,
         // TODO: Make this automatic?
         None => match c {
@@ -26,9 +30,9 @@ pub fn get_name(c: u32) -> &'static str {
             0x2CEB0...0x2EBE0 => "CJK Ideograph Extension F",
             0xF0000...0xFFFFD => "Plane 15 Private Use",
             0x100000...0x10FFFD => "Plane 16 Private Use",
-            _ => "UNKNOWN CHARACTER",
+            _ => return None,
         },
-    }
+    })
 }
 
 #[cfg(test)]

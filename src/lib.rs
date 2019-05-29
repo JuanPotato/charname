@@ -11,7 +11,7 @@ pub fn get_name(c: u32) -> &'static str {
 }
 
 pub fn get_name_checked(c: u32) -> Option<&'static str> {
-    Ok(match UNICODE.get(&c) {
+    Some(match UNICODE.get(&c) {
         Some(s) => s,
         // TODO: Make this automatic?
         None => match c {

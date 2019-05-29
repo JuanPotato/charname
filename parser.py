@@ -24,6 +24,7 @@ def main(filename, dstfilename):
 
 
 if __name__ == '__main__':
+    # https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
     src = 'UnicodeData.txt'
     dst = 'UnicodeDataFixed.txt'
 

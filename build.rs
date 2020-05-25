@@ -9,8 +9,7 @@ use std::fs::File;
 use std::io::{BufWriter, Write};
 use std::path::Path;
 
-use std::io::{BufReader,BufRead};
-// Unicode 10.0
+use std::io::{BufRead, BufReader};
 
 fn main() {
     let path = Path::new(&env::var("OUT_DIR").unwrap()).join("codegen.rs");
@@ -18,7 +17,6 @@ fn main() {
 
     let uni_data = File::open("UnicodeDataFixed.txt").unwrap();
 
-    write!(&mut file, "static UNICODE: phf::Map<u32, &'static str> = ").unwrap();
     let mut builder = phf_codegen::Map::new();
 
     for line in BufReader::new(uni_data).lines() {
@@ -30,7 +28,10 @@ fn main() {
         builder.entry(num, &format!("\"{}\"", name));
     }
 
-    builder.build(&mut file).unwrap();
-
-    write!(&mut file, ";\n").unwrap();
+    writeln!(
+        &mut file,
+        "static UNICODE: ::phf::Map<u32, &'static str> = \n{};",
+        builder.build(),
+    )
+    .unwrap();
 }

@@ -11,7 +11,7 @@ pub fn get_name(c: u32) -> &'static str {
 pub fn get_name_checked(c: u32) -> Option<&'static str> {
     Some(match UNICODE.get(&c) {
         Some(s) => s,
-        // TODO: Make this automatic?
+
         None => match c {
             0x3400..=0x4DBF => "CJK Ideograph Extension A",
             0x4E00..=0x9FFC => "CJK Ideograph",
@@ -30,6 +30,7 @@ pub fn get_name_checked(c: u32) -> Option<&'static str> {
             0x30000..=0x3134A => "CJK Ideograph Extension G",
             0xF0000..=0xFFFFD => "Plane 15 Private Use",
             0x100000..=0x10FFFD => "Plane 16 Private Use",
+
             _ => return None,
         },
     })

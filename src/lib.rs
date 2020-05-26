@@ -38,7 +38,7 @@ pub fn get_name_checked(c: u32) -> Option<&'static str> {
 
 #[cfg(test)]
 mod tests {
-    use get_name;
+    use super::get_name;
 
     #[test]
     fn normal() {

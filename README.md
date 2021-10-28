@@ -1,5 +1,5 @@
 # charname
-A library to get the name of unicode characters. [Documentation](https://doc.rs/charname)
+A library to get the name of unicode characters. [Documentation](https://docs.rs/charname)
 
 ## Usage
 There are two available functions `get_name` and `get_name_checked`.

@@ -14,7 +14,7 @@ pub fn get_name_checked(c: u32) -> Option<&'static str> {
 
         None => match c {
             0x3400..=0x4DBF => "CJK Ideograph Extension A",
-            0x4E00..=0x9FFC => "CJK Ideograph",
+            0x4E00..=0x9FFF => "CJK Ideograph",
             0xAC00..=0xD7A3 => "Hangul Syllable",
             0xD800..=0xDB7F => "Non Private Use High Surrogate",
             0xDB80..=0xDBFF => "Private Use High Surrogate",
@@ -22,8 +22,8 @@ pub fn get_name_checked(c: u32) -> Option<&'static str> {
             0xE000..=0xF8FF => "Private Use",
             0x17000..=0x187F7 => "Tangut Ideograph",
             0x18D00..=0x18D08 => "Tangut Ideograph Supplement",
-            0x20000..=0x2A6DD => "CJK Ideograph Extension B",
-            0x2A700..=0x2B734 => "CJK Ideograph Extension C",
+            0x20000..=0x2A6DF => "CJK Ideograph Extension B",
+            0x2A700..=0x2B738 => "CJK Ideograph Extension C",
             0x2B740..=0x2B81D => "CJK Ideograph Extension D",
             0x2B820..=0x2CEA1 => "CJK Ideograph Extension E",
             0x2CEB0..=0x2EBE0 => "CJK Ideograph Extension F",

@@ -2,12 +2,21 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+//! Basic crate to return the name for a codepoint as defined by the Unicode standard.
+//!
+//! Names are scrapped from the
+//! [UnicodeData.txt](https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt) file.
+
 include!(concat!(env!("OUT_DIR"), "/codegen.rs"));
 
+/// Returns the Unicode name for a codepoint if it exists, `"UNKNOWN CHARACTER"` otherwise. Returns
+/// the same data as [get_name_checked] except it will always return some string.
 pub fn get_name(c: u32) -> &'static str {
     get_name_checked(c).unwrap_or("UNKNOWN CHARACTER")
 }
 
+/// Returns the Unicode name in an Option for a codepoint if it exists, None otherwise. Codepoints
+/// inside ranges that don't have a specific name per codepont will return the name of the range.
 pub fn get_name_checked(c: u32) -> Option<&'static str> {
     Some(match UNICODE.get(&c) {
         Some(s) => s,

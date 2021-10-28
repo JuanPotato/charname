@@ -63,7 +63,7 @@ def main(filename, dstfilename):
 
 
 if __name__ == '__main__':
-    latest = "https://www.unicode.org/Public/13.0.0/ucd/UnicodeData.txt"
+    latest = "https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt"
     src = 'UnicodeData.txt'
     dst = 'UnicodeDataFixed.txt'
 

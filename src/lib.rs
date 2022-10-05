@@ -32,11 +32,12 @@ pub fn get_name_checked(c: u32) -> Option<&'static str> {
             0x17000..=0x187F7 => "Tangut Ideograph",
             0x18D00..=0x18D08 => "Tangut Ideograph Supplement",
             0x20000..=0x2A6DF => "CJK Ideograph Extension B",
-            0x2A700..=0x2B738 => "CJK Ideograph Extension C",
+            0x2A700..=0x2B739 => "CJK Ideograph Extension C",
             0x2B740..=0x2B81D => "CJK Ideograph Extension D",
             0x2B820..=0x2CEA1 => "CJK Ideograph Extension E",
             0x2CEB0..=0x2EBE0 => "CJK Ideograph Extension F",
             0x30000..=0x3134A => "CJK Ideograph Extension G",
+            0x31350..=0x323AF => "CJK Ideograph Extension H",
             0xF0000..=0xFFFFD => "Plane 15 Private Use",
             0x100000..=0x10FFFD => "Plane 16 Private Use",
 

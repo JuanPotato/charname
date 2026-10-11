@@ -23,7 +23,7 @@ fn main() {
         let num = u32::from_str_radix(data.next().unwrap(), 16).unwrap();
         let name = data.next().unwrap();
 
-        builder.entry(num, &format!("\"{}\"", name));
+        builder.entry(num, format!("\"{}\"", name));
     }
 
     writeln!(

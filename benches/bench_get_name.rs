@@ -1,5 +1,6 @@
 use charname::get_name;
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+use criterion::{Criterion, criterion_group, criterion_main};
+use std::hint::black_box;
 
 const TEST_CHARS: [u32; 1000] = [
     0x1F32D, 0x1D15C, 0x011C5, 0x1F868, 0x1D1D6, 0xE018D, 0x0A27A, 0x11729, 0x02C16, 0x0146F,
